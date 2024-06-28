@@ -1,30 +1,115 @@
-# React + TypeScript + Vite
+# @akifzdemir/react-multi-select
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A customizable multi-select component for React applications, designed with Tailwind CSS for styling.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Installation](#installation)
+- [Usage](#usage)
+- [Props](#props)
+- [Development](#development)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Install the package using npm or yarn:
 
-- Configure the top-level `parserOptions` property like this:
+```bash
+npm install @akifzdemir/react-multi-select
+```
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
+or
+
+```bash
+yarn add @akifzdemir/react-multi-select
+```
+
+## Usage
+
+Import the `MultiSelect` component and use it in your React application:
+
+```jsx
+import React from "react";
+import { MultiSelect, OptionType } from "@akifzdemir/react-multi-select";
+import "@akifzdemir/react-multi-select/dist/style.css";
+
+const options: OptionType[] = [
+  { label: "Option 1", value: "option1" },
+  { label: "Option 2", value: "option2" },
+  // Add more options here
+];
+
+const App = () => {
+  const handleChange = (selected: OptionType[]) => {
+    console.log("Selected options:", selected);
+  };
+
+  return (
+    <div>
+      <MultiSelect options={options} onChange={handleChange} />
+    </div>
+  );
+};
+
+export default App;
+```
+
+## Props
+
+The `MultiSelect` component accepts the following props:
+
+| Prop              | Type                               | Default     | Description                                       |
+| ----------------- | ---------------------------------- | ----------- | ------------------------------------------------- |
+| `options`         | `OptionType[]`                     | `[]`        | Array of options to select from.                  |
+| `onChange`        | `(selected: OptionType[]) => void` | `undefined` | Callback function called when selection changes.  |
+| `isDark`          | `boolean`                          | `false`     | Determines if the component should use dark mode. |
+| `selectClassName` | `string`                           | `''`        | Additional classes for the select button.         |
+| `optionClassName` | `string`                           | `''`        | Additional classes for the options.               |
+
+### `OptionType`
+
+The `OptionType` interface defines the shape of each option object:
+
+```ts
+export interface OptionType {
+  label: string;
+  value: string;
 }
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Development
+
+To contribute to this project, follow these steps:
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/username/react-multi-select.git
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Build the project:
+
+```bash
+npm run build
+```
+
+4. Run the development server:
+
+```bash
+npm run dev
+```
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request with your changes. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

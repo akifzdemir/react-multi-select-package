@@ -1,6 +1,6 @@
 {
   "name": "@akifzdemir/react-multi-select",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "private": false,
   "type": "module",
   "main": "./dist/react-multi-select.umd.js",
@@ -15,6 +15,21 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
+  "keywords": [
+    "react",
+    "multi-select",
+    "component"
+  ],
+  "author": "Mehmet Akif Ozdemir",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akifzdemir/react-multi-select-package.git"
+  },
+  "bugs": {
+    "url": "https://github.com/akifzdemir/react-multi-select-package/issues"
+  },
+  "homepage": "https://github.com/akifzdemir/react-multi-select-package",
   "dependencies": {
     "clsx": "^2.1.1",
     "react": "^18.3.1",
