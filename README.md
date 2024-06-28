@@ -2,12 +2,11 @@
 
 A customizable multi-select component for React applications, designed with Tailwind CSS for styling.
 
-![Screenshot](/img/image.png)
-
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Screenshot](#screenshot)
 - [Props](#props)
 - [Development](#development)
 - [Contributing](#contributing)
@@ -57,7 +56,9 @@ const App = () => {
 export default App;
 ```
 
-## Screen Shout
+## Screenshot
+
+![Screenshot](/img/image.png)
 
 ## Props
 
